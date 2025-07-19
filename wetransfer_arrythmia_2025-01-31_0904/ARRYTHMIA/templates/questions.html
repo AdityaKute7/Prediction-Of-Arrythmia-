@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms Analysis | Arrhythmia Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/question.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-heartbeat"></i>
+            <span>ArrhythmiaAI</span>
+        </div>
+        <div class="progress-indicator">
+            <div class="progress-text">Symptoms Analysis</div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 20%"></div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="question-card">
+                <div class="card-header">
+                    <h1>Symptoms Analysis</h1>
+                    <p class="subtitle">Please answer these questions about your symptoms carefully</p>
+                </div>
+
+                <form method="post" class="symptoms-form">
+                    <div class="questions-grid">
+                        <div class="question-item">
+                            <div class="question-header">
+                                <i class="fas fa-heart-pulse"></i>
+                                <label>Chest Discomfort</label>
+                            </div>
+                            <div class="options-container">
+                                <label class="option">
+                                    <input type="radio" name="chest_pain" value="0" required>
+                                    <span class="option-box">
+                                        <i class="fas fa-times"></i>
+                                        <span>No</span>
+                                    </span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="chest_pain" value="1">
+                                    <span class="option-box">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yes</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question-item">
+                            <div class="question-header">
+                                <i class="fas fa-lungs"></i>
+                                <label>Shortness of Breath</label>
+                            </div>
+                            <div class="options-container">
+                                <label class="option">
+                                    <input type="radio" name="shortness_of_breath" value="0" required>
+                                    <span class="option-box">
+                                        <i class="fas fa-times"></i>
+                                        <span>No</span>
+                                    </span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="shortness_of_breath" value="1">
+                                    <span class="option-box">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yes</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question-item">
+                            <div class="question-header">
+                                <i class="fas fa-tired"></i>
+                                <label>Fatigue</label>
+                            </div>
+                            <div class="options-container">
+                                <label class="option">
+                                    <input type="radio" name="fatigue" value="0" required>
+                                    <span class="option-box">
+                                        <i class="fas fa-times"></i>
+                                        <span>No</span>
+                                    </span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="fatigue" value="1">
+                                    <span class="option-box">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yes</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question-item">
+                            <div class="question-header">
+                                <i class="fas fa-dizzy"></i>
+                                <label>Dizziness</label>
+                            </div>
+                            <div class="options-container">
+                                <label class="option">
+                                    <input type="radio" name="dizziness" value="0" required>
+                                    <span class="option-box">
+                                        <i class="fas fa-times"></i>
+                                        <span>No</span>
+                                    </span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="dizziness" value="1">
+                                    <span class="option-box">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yes</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question-item">
+                            <div class="question-header">
+                                <i class="fas fa-heart-broken"></i>
+                                <label>Palpitations</label>
+                            </div>
+                            <div class="options-container">
+                                <label class="option">
+                                    <input type="radio" name="palpitations" value="0" required>
+                                    <span class="option-box">
+                                        <i class="fas fa-times"></i>
+                                        <span>No</span>
+                                    </span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="palpitations" value="1">
+                                    <span class="option-box">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yes</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-footer">
+                        <button type="submit" class="btn-primary">
+                            <span>Continue</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

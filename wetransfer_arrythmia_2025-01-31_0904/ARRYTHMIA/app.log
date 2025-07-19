@@ -1,0 +1,22 @@
+2024-08-24 17:48:32,427  * Debugger is active!
+2024-08-24 17:48:32,431  * Debugger PIN: 238-871-596
+2024-08-24 17:48:32,687 127.0.0.1 - - [24/Aug/2024 17:48:32] "GET /login HTTP/1.1" 200 -
+2024-08-24 17:48:32,760 127.0.0.1 - - [24/Aug/2024 17:48:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-08-24 17:48:38,915 127.0.0.1 - - [24/Aug/2024 17:48:38] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-08-24 17:48:38,948 127.0.0.1 - - [24/Aug/2024 17:48:38] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-24 17:48:38,949 127.0.0.1 - - [24/Aug/2024 17:48:38] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-24 17:48:38,971 127.0.0.1 - - [24/Aug/2024 17:48:38] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-08-24 17:48:39,092 127.0.0.1 - - [24/Aug/2024 17:48:39] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-08-24 17:50:11,717  * Detected change in 'd:\\gaurav\\ARRYTHMIA\\app.py', reloading
+2024-08-24 17:52:27,338 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 17:52:27,338 [33mPress CTRL+C to quit[0m
+2024-08-24 17:52:27,354  * Restarting with stat
+2024-08-24 17:52:29,029  * Debugger is active!
+2024-08-24 17:52:29,044  * Debugger PIN: 238-871-596
+2024-08-24 17:52:46,026 127.0.0.1 - - [24/Aug/2024 17:52:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-08-24 17:52:46,038 127.0.0.1 - - [24/Aug/2024 17:52:46] "GET /login HTTP/1.1" 200 -
+2024-08-24 17:52:46,160 127.0.0.1 - - [24/Aug/2024 17:52:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-08-24 17:52:54,143 127.0.0.1 - - [24/Aug/2024 17:52:54] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-08-24 17:52:54,153 127.0.0.1 - - [24/Aug/2024 17:52:54] "GET /login HTTP/1.1" 200 -
+2024-08-24 17:52:54,170 127.0.0.1 - - [24/Aug/2024 17:52:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -

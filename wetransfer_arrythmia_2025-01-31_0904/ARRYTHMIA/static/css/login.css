@@ -1,0 +1,528 @@
+/* login.css */
+:root {
+    --primary: #4f46e5;
+    --primary-light: #6366f1;
+    --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    --secondary: #06b6d4;
+    --accent: #0ea5e9;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --background: #f0f9ff;
+    --white: #ffffff;
+    --error: #ef4444;
+    --success: #10b981;
+    --input-border: #e2e8f0;
+    --input-focus: rgba(79, 70, 229, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+    overflow: hidden;
+}
+
+.login-wrapper {
+    display: flex;
+    min-height: 600px;
+}
+
+/* Left Section Styles */
+.login-left {
+    flex: 1;
+    background: var(--primary-gradient);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brand-logo i {
+    font-size: 2.25rem;
+    color: var(--white);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    animation: pulse 2s infinite;
+}
+
+.ecg-wrapper {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ecg-animation {
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+.ecg-line {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.ecg {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    animation: drawECG 3s linear infinite;
+    transform-origin: center;
+    transform: translateY(50%);
+}
+
+/* Right Section Styles */
+.login-right {
+    flex: 1;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+}
+
+.login-header {
+    margin-bottom: 2.5rem;
+}
+
+.login-header h1 {
+    color: var(--text-primary);
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+
+/* Left icon (lock) */
+.input-wrapper i:not(.toggle-password i) {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    font-size: 1.2rem;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Input field */
+.input-wrapper input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 3rem; /* Adjusted padding for both icons */
+    border: 2px solid var(--input-border);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--white);
+}
+
+/* Eye icon button */
+.toggle-password {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Eye icon itself */
+.toggle-password i {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+/* Hover effect for eye icon */
+.toggle-password:hover {
+    color: var(--secondary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Focus state improvements */
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--input-focus);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.remember-me input[type="checkbox"] {
+    accent-color: var(--primary);
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: var(--secondary);
+}
+
+.login-button {
+    width: 100%;
+    padding: 1.1rem;
+    background: var(--primary-gradient);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+.login-button i {
+    transition: transform 0.3s ease;
+}
+
+.login-button:hover i {
+    transform: translateX(4px);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-secondary);
+}
+
+.register-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: var(--secondary);
+}
+
+/* Alert Styles */
+.alert-container {
+    margin-bottom: 1.5rem;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    animation: slideIn 0.3s ease;
+}
+
+.alert-error {
+    background: #fef2f2;
+    color: var(--error);
+    border-left: 4px solid var(--error);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes drawECG {
+    0% {
+        stroke-dasharray: 2000;
+        stroke-dashoffset: 2000;
+        opacity: 0.8;
+    }
+    45% {
+        stroke-dasharray: 2000;
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    100% {
+        stroke-dasharray: 2000;
+        stroke-dashoffset: -2000;
+        opacity: 0.8;
+    }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+    }
+
+    .login-wrapper {
+        flex-direction: column;
+    }
+
+    .login-left {
+        padding: 2rem;
+        min-height: 200px;
+    }
+
+    .login-right {
+        padding: 2rem;
+    }
+
+    .login-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .form-options {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .input-wrapper i:not(.toggle-password i) {
+        left: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .input-wrapper input {
+        padding: 0.9rem 2.75rem;
+    }
+
+    .toggle-password {
+        right: 1rem;
+    }
+
+    .ecg-animation {
+        height: 80px;
+    }
+
+    .heart-rate {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Background Effects */
+.background-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.glass-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.shape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 20s infinite;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+}
+
+.square {
+    width: 120px;
+    height: 120px;
+    bottom: 20%;
+    right: 15%;
+    transform: rotate(45deg);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 170px solid rgba(255, 255, 255, 0.1);
+    top: 40%;
+    left: 60%;
+}
+
+/* Heart Rate Monitor */
+.heart-rate {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.heart-icon {
+    width: 28px;
+    height: 28px;
+    fill: #760202;
+    animation: heartbeat 1s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.3));
+}
+
+.heart-rate-text {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.bpm {
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.text {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Update existing card styles */
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add these animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add smooth transitions */
+.input-wrapper input:focus + i:not(.toggle-password i) {
+    color: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+    transition: all 0.3s ease;
+}

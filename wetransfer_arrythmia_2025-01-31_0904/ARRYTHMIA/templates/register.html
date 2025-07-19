@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+
+<body>
+    <header>
+        
+    </header>
+    <main>
+        <div class="register-container">
+            <form method="post" class="register-form">
+                <h1>Prediction of Arrhythmia using Deep Learning</h1>
+                <h2>Create an Account</h2>
+
+                <!-- Username and Password Fields -->
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <!-- Security Questions (Static, No Input for Questions) -->
+                <label for="answer_1">What is your Mother’s Name?</label>
+                <input type="text" id="answer_1" name="answer_1" required>
+
+                <label for="answer_2">What is your Birth City/Village Name?</label>
+                <input type="text" id="answer_2" name="answer_2" required>
+
+                <!-- Submit Button -->
+                <button type="submit">Register</button>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

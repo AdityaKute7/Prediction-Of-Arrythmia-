@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Assessment Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl w-full">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Prediction of Arrhythmia using DL</h1>
+            <h2 class="text-xl font-semibold text-gray-700">Health Assessment Result</h2>
+        </div>
+
+        <!-- Symptom Result Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Diagnostic Assessment</h2>
+            <p class="text-gray-700 text-lg">{{ suggestion }}</p>
+        </div>
+
+        <!-- ECG Result Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Result</h2>
+            <p class="text-gray-700 text-lg">{{ ecg_result }}</p>
+            {% if ecg_result == 'Arrhythmia' %}
+            <div class="mt-4 p-4 bg-red-100 rounded-lg">
+                <p class="text-red-700 font-semibold text-lg">DIAGNOSIS: {{ cure }}</p>
+                <p class="text-red-700 text-lg">Precautions: {{ precautions }}</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="flex justify-between">
+            <a href="{{ url_for('index') }}"
+                class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
+                <i class="fas fa-arrow-left mr-2"></i>Go Back
+            </a>
+            <a href="{{ url_for('logout') }}"
+                class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition">
+                <i class="fas fa-sign-out-alt mr-2"></i>Logout
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

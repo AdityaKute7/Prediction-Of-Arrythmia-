@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Arrhythmia Prediction System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-wrapper">
+            <!-- Left Section with Image -->
+            <div class="login-left">
+                <div class="brand-logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Prediction of Arrhythmia using dl</span>
+                </div>
+                <div class="ecg-wrapper">
+                    <div class="ecg-animation">
+                        <svg class="ecg-line" viewBox="0 0 600 200">
+                            <polyline class="ecg" points="0,100 30,100 35,100 40,100 45,100 50,100 55,100 60,100 65,100 70,100 75,100 80,100 85,100 90,100 95,100 100,100 105,100 110,100 115,100 120,100 125,100 130,100 135,100 140,100 145,100 150,100 155,100 160,100 165,100 170,100 175,100 180,100 185,100 190,100 195,100 200,100 205,100 210,100 215,100 220,100 225,100 230,100 235,100 240,100 245,100 250,100 255,100 260,100 265,100 270,100 275,100 280,100 285,100 290,100 295,100 300,60 302,40 305,20 307,25 310,30 313,35 315,40 317,45 320,50 322,55 325,60 327,65 330,70 332,75 335,80 337,85 340,90 342,95 345,100 347,100 350,100 355,100 360,100 365,100 370,100 375,100 380,100 385,100 390,100 395,100 400,100" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section with Login Form -->
+            <div class="login-right">
+                <div class="login-header">
+                    <h1>Welcome Back</h1>
+                    <p>Please enter your credentials to continue</p>
+                </div>
+
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="alert-container">
+                            {% for message in messages %}
+                                <div class="alert alert-error">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+
+                <form method="post" class="login-form">
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="username" name="username" placeholder="Username" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Password" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="{{ url_for('forgot_password') }}" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        <span>Sign In</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <div class="register-link">
+                        <span>Don't have an account?</span>
+                        <a href="{{ url_for('register') }}">Create Account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.toggle-password').addEventListener('click', function() {
+            const passwordInput = document.querySelector('#password');
+            const icon = this.querySelector('i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    </script>
+</body>
+
+</html>

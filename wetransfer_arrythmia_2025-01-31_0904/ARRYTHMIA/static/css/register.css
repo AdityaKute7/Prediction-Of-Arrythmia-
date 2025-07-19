@@ -1,0 +1,107 @@
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #62f1a7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Register container styling */
+.register-container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Register form styling */
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form title */
+.register-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Label styling */
+.register-form label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Input field styling */
+.register-form input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect on input fields */
+.register-form input:focus {
+    border-color: #007BFF;
+}
+
+/* Button styling */
+.register-form button {
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.register-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Paragraph and link styling */
+.register-form p {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-form a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.register-form a:hover {
+    text-decoration: underline;
+}

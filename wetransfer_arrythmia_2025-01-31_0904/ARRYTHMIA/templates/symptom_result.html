@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+
+<body>
+    <div class="result-container">
+        <h1>Symptom Results</h1>
+        <div class="result-section">
+            <h2>Symptom Analysis</h2>
+            <p><strong>Symptoms:</strong></p>
+            <ul>
+                {% for symptom, answer in symptoms.items() %}
+                <li>{{ symptom.replace('_', ' ').title() }}: {{ 'Yes' if answer == '1' else 'No' }}</li>
+                {% endfor %}
+            </ul>
+            <p class="suggestion-text">{{ suggestion }}</p>
+            <form action="{{ url_for('predict') }}" method="POST">
+                <button type="submit">Proceed to ECG Result</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
