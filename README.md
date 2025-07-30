@@ -55,10 +55,14 @@ Cardiovascular diseases, particularly arrhythmias, are a major cause of global m
 
 ---
 
-## ⚙ How to Run Locally
+##  References
+The model is built and validated using well-established datasets and methodologies such as:
 
-1. **Clone the repository**
+MIT-BIH Arrhythmia Database
 
-```bash
-git clone https://github.com/yourusername/arrhythmia-predictor.git
-cd arrhythmia-predictor
+CNN architectures inspired by Acharya et al., Rajpurkar et al.
+
+Research references listed in the thesis document
+
+##  Author
+Aditya Kute – Final Year Project
