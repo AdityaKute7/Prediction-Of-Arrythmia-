@@ -1,10 +1,10 @@
-# Arrhythmia Prediction Using Deep Learning 🫀🧠
+# Arrhythmia Prediction Using Deep Learning (B.E. Final year project)
 
 A deep learning-based ECG arrhythmia prediction system leveraging Convolutional Neural Networks (1D-CNN) for early and accurate diagnosis of cardiac irregularities. The project is deployed via a Flask web app, enabling real-time prediction from ECG input data.
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 Cardiovascular diseases, particularly arrhythmias, are a major cause of global mortality. This project aims to automate arrhythmia detection using deep learning, reducing reliance on manual ECG interpretation and enabling early intervention through:
 
@@ -14,16 +14,51 @@ Cardiovascular diseases, particularly arrhythmias, are a major cause of global m
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🧠 **1D Convolutional Neural Network (CNN)** for ECG signal classification
-- 📊 Accuracy of **92–95%** on testing data
-- 🖥️ Flask-based web application with secure user login
-- 📁 CSV-based ECG input format with preprocessing pipeline
-- 🧾 Real-time prediction with visual results and healthcare suggestions
-- 👩‍⚕️ Symptom analysis through pre-diagnostic questionnaire
+-  **1D Convolutional Neural Network (CNN)** for ECG signal classification
+-  Accuracy of **92–95%** on testing data
+-  Flask-based web application with secure user login
+-  CSV-based ECG input format with preprocessing pipeline
+-  Real-time prediction with visual results and healthcare suggestions
+-  Symptom analysis through pre-diagnostic questionnaire
+
+---
+## Model Architecture
+
+- **Input**: ECG values (RR interval, P-wave, QRS complex, T-wave, QT interval)
+- **CNN Layers**: Conv1D → MaxPooling → Dropout → Flatten → Dense → Dropout → Output
+- **Output**: Binary classification → `Normal (0)` or `Arrhythmia (1)`
 
 ---
 
-## 📂 Project Structure
+##  Performance Metrics
 
+| Metric      | Value       |
+|-------------|-------------|
+| Accuracy    | 92–95%      |
+| Precision   | >90%        |
+| Recall      | >90%        |
+| F1-Score    | High        |
+
+---
+
+##  Tools & Libraries
+
+- **Python**
+- **TensorFlow / Keras**
+- **Scikit-learn**
+- **Pandas, NumPy**
+- **Flask (Web Interface)**
+- **Google Colab / Jupyter for training**
+- **Matplotlib / Seaborn for visualization**
+
+---
+
+## ⚙ How to Run Locally
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/yourusername/arrhythmia-predictor.git
+cd arrhythmia-predictor
