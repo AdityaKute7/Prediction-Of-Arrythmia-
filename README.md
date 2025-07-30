@@ -66,3 +66,4 @@ Research references listed in the thesis document
 
 ##  Author
 Aditya Kute – Final Year Project
+© 2025 Aditya Kute. All rights reserved.
